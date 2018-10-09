@@ -1,8 +1,10 @@
 /* Core Styles*/
 
+
+
 body {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'merriweather', serif;
     background: #333;
     color: #fff;
     font-size: 1.1em;
@@ -10,13 +12,114 @@ body {
     text-align: center;
 }
 
-div #logo {
-    max-width: 8rem;
-    max-height: 10rem;
-    float: right;
+/* Navigation */
+
+.container nav.desk, 
+.container nav.mob {
+    width: 100%;
+    background: transparent;
+    height: 60px;
+    top: 0;
+    left: 0;
 }
 
-img {
+nav.desk {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 100px;
+    box-sizing: border-box;
+    transition: .3s;
+    height: 100px;
+    width: 100%;
+    background-color: transparent;
+    text-shadow:
+		-1px -1px 0 #fff,
+		1px -1px 0 #fff ,
+		-1px 1px 0 #fff,
+		1px 1px 0 #fff;
+}
+
+
+nav.desk ul {
+    list-style: none;
+    margin: 0 auto;
+    width: 75%;
+    height: 60px;
+    padding: none;
+
+}
+
+nav ul li a {
+    color: rgb(159, 202, 60);
+    text-decoration: none;
+    list-style: none;
+    text-shadow:
+        -1px -1px 0 #fff,
+		1px -1px 0 #fff ,
+		-1px 1px 0 #fff,
+		1px 1px 0 #fff;
+}
+
+
+
+nav.desk ul li {
+    text-align: center;
+    width: 20%;
+    float: left;
+    line-height: 60px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+nav ul li:hover {
+    background: #a3ada5;
+    text-decoration: none;
+}
+
+nav ul li.active {
+    background: #a3ada5;
+    text-decoration: none;
+}
+
+
+
+
+/* Logo Styling */
+
+/*nav .logo {
+    padding: 22px 20px;
+    height: 80px;
+    float: left;
+    font-size: 24px;
+    transition: .3s;
+}*/
+
+
+
+nav div:first-child img {
+    max-width: 8em;
+    max-height: 10em;
+    float: left;
+    padding-right: 4rem;
+}
+
+li a:hover {
+	background-color: #eaeaea;
+	color: #333;
+}
+
+
+
+
+/*div .logo {
+    max-width: 8px;
+    max-height: 10px;
+    float: right;
+}*/
+
+.img-1, .img-2, .img-3 {
     display: block;
     width: 100%;
     height: auto;
@@ -56,20 +159,27 @@ p {
 
 #showcase .bg-img {
     position: absolute;
-    background: #333 url('img/bg-img2.jpeg');
+    background: rgb(26, 26, 26) url('img/new-showcase.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100vh;
     z-index: -1;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
 #showcase h1 {
-    padding-top: 100px;
+    color: rgb(0, 0, 0);
+    padding-top: 200px;
     padding-bottom: 0;
+    text-shadow:
+		-1px -1px 0 #fff,
+		1px -1px 0 #fff,
+		-1px 1px 0 #fff,
+		1px 1px 0 #fff;
 }
+
 #showcase .content-wrap,
 #section-a .content-wrap {
     padding: 0 2.5em;
@@ -81,6 +191,10 @@ p {
     background: #eaeaea;
     color: #333;
     padding-bottom: 2em;
+}
+
+h1.logo-2 {
+    display: none;
 }
 
 /* Section B */
@@ -98,7 +212,7 @@ p {
 
 #section-b li {
     margin-bottom: 1em;
-    background: #fff;
+    background: #eaeaea;
     color: #333;
 
 }
@@ -110,8 +224,8 @@ p {
 /* Section C */
 
 #section-c {
-    background: #fff;
-    color: #333;
+    background: #333;
+    color: #eaeaea;
     padding: 2em;
 }
 
@@ -119,12 +233,13 @@ p {
 
 #section-d .box {
     padding: 2em;
-    color: #fff;
+    color: #333;
+    background: #eaeaea;
 }
 
 #section-d .box:first-child {
-    background: rgb(74, 216, 74);
-    color: #fff; 
+    background: rgb(159, 202, 60);
+    color: #333; 
 }
 
 /* Footer */
@@ -137,13 +252,69 @@ p {
 }
 
 #main-footer .footer-bottom {
-    color: rgb(74, 216, 74);
+    color: rgb(159, 202, 60);
     text-decoration: none;
+}
+
+nav.mob,
+.hamburger-btn {
+    display: none;
 }
 
 /* Media Queries */
 
-@media(min-width: 700px) {
+@media screen and (max-width: 700px) {
+
+    
+    nav.desk {
+    display: none;
+    }
+
+    nav.mob, 
+    .hamburger-btn {
+        display: block;
+    }
+
+    .hamburger-btn {
+        position: relative;
+    }
+
+    .hamburger-btn .fa-bars, 
+    .hamburger-btn .fa-times {
+        position: fixed;
+        right: 25px;
+        top: 15px;
+        font-size: 35px;
+        cursor: pointer;
+        color: #eaeaea;
+    }
+
+    .mob ul {
+        margin-top: 60px;
+        background: #333333;
+        display: none;
+        list-style: none;
+    }
+
+
+    .mob li {
+        text-transform: uppercase;
+        text-align: center;
+        padding: 20px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .mob ul.active {
+        display: block;
+    }
+
+
+    .logo {
+        display: none;
+
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
@@ -183,6 +354,7 @@ p {
    
      #section-b .img-2 {
       padding-bottom: 3.5em;
+     
     }
 
      #section-b .img-3 {

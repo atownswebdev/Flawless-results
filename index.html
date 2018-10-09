@@ -7,17 +7,64 @@
     <title>Flawless|Results</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".hamburger-btn .fa-times").hide();
+
+            $(".hamburger-btn .fa-bars").click(function(){
+                $(this).hide();
+                $(".hamburger-btn .fa-times").show();  
+                $(".mob ul").addClass("active");             
+            });
+
+            $(".hamburger-btn .fa-times").click(function(){
+                $(this).hide();
+                $(".hamburger-btn .fa-bars").show();
+                $(".mob ul").removeClass("active");
+            });
+        });
+    </script>
+
 </head>
 
 <body>
+    <div class="container">
+
+        <nav class="desk">
+
+            <div class="Logo">
+                <h1><a href="#showcase"><img id="nav-img" src="img/logo-green.PNG" alt="Logo"></a></h1>
+            </div>
+
+            <ul>
+                <li class="active"><a href="#showcase">Home</a></li>
+                <li><a href="#section-c">Consultation</a></li>
+                <li><a href="#section-b">About Us</a></li>
+                <li><a href="#section-d">Our Clients</a></li>
+            </ul>
+        </nav>
+    
+        <nav class="mob">
+            <div class="hamburger-btn">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+                <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
+            <ul>
+                <li class="active"><a href="#showcase">Home</a></li>
+                <li><a href="#section-c">Consultation</a></li>
+                <li><a href="#section-b">About Us</a></li>
+                <li><a href="#section-d">Our Clients</a></li>
+            </ul>
+        </nav>
+    </div>
     <!-- Header Showcase -->
     <header id="showcase" class="grid">
-        <div class="bg-img"></div>
-        <div class="content-wrap">
-            <div id="logo">
-            <img src="img/logo-green.PNG" alt="Logo" width="40">
-            </div>
+
+    <div class="bg-img"></div>
+    <div class="content-wrap">
             <h1>Flawless Results</h1>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda cumque cupiditate nisi unde culpa ut a
             eius repellendus. Nulla, ad?</p>
@@ -27,9 +74,13 @@
 
     <!-- Main Area -->
     <main id="main">
+        
         <!--Section A -->
         <section id="section-a" class="grid">
             <div class="content-wrap">
+                <div class="Logo-2">
+                    <h1 class="logo-2"><a href="home.asp"><img id="nav-img" src="img/logo-green.PNG" alt="Logo"></a></h1>
+                </div>
                 <h2 class="content-title">Main Area!</h2>
                 <div class="content-text">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde deserunt vel repudiandae sint adipisci? Laboriosam ut asperiores nesciunt! Delectus, molestias deserunt rerum ipsum, vel voluptates ducimus voluptate eveniet consequuntur veritatis repellat neque error nostrum minus animi iste sunt qui enim?</p>
@@ -42,38 +93,29 @@
             <ul>
                 <li>
                     <div class="card">
-                        <div class="img-1">
-                        <img src="img/logo-dark2.PNG" alt="Commercial Cleaning">
-                        </div>
-                        <div class="card-content">
+                        <img class="img-1" src="img/new-1.jpg" alt="Commercial Cleaning">
+                    </div>    
+                    <div class="card-content">
                             <h3 class="card-title">Title</h3>
                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, doloremque.</p>
-
-                        </div>
                     </div>
                 </li>
                 <li>
-                    <div class="card">
-                        <div class="img-2">
-                        <img src="img/cleaning-img-6.jpg" alt="Commercial Cleaning">
-                        </div>
-                        <div class="card-content">
+                    <div class="card">                      
+                        <img class="img-2" src="img/new-3.jpg" alt="Commercial Cleaning">
+                    </div>  
+                    <div class="card-content">
                             <h3 class="card-title">Title</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque nam at molestias amet. Qui suscipit dolorem vitae voluptatum doloremque molestias ab, a adipisci neque unde ullam! Vero, totam commodi. Ea.</p>
-
-                        </div>
                     </div>
                 </li>
                 <li>
-                    <div class="card">
-                        <div class="img-3">
-                        <img src="img/cleaning-flyer.png" alt="Commercial Cleaning">
-                        </div>
-                        <div class="card-content">
+                    <div class="card">                     
+                        <img class="img-3" src="img/new-2.jpg" alt="Commercial Cleaning">
+                    </div>
+                    <div class="card-content">
                             <h3 class="card-title">Title</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolores aliquid officia, magnam et quos? Sint, rem voluptatum laborum obcaecati sunt doloremque ab ipsa totam, molestias itaque nam atque? Beatae.</p>
-
-                        </div>
                     </div>
                 </li>
             </ul>
